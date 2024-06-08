@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import AddQuotes from './components/AddQuotes';
+import NavBar from './components/NavBar';
+import DeleteQuotes from './components/DeleteQuotes';
+import SearchQuotes from './components/SearchQuotes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ViewAll from './components/ViewAll';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+<BrowserRouter>
+<Routes>
+  <Route path='/' element={<AddQuotes/>}/>
+  <Route path='/search' element={<SearchQuotes/>}/>
+  <Route path='/delete' element={<DeleteQuotes/>}/>
+  <Route path='/viewAll' element={<ViewAll/>}/>
+</Routes>
+</BrowserRouter>
     </div>
   );
 }
